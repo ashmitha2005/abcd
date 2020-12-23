@@ -28,11 +28,11 @@ function setup() {
 	bobObject4 = new Bob(320,400,40);
 	bobObject5 = new Bob(360,400,40);
 	roofobj = new Roof(280,250,210,20);
-	rope1 = new Rope(bobObject3.body , roofobj.body , -Bob.r*4 , 0);
-	rope2 = new Rope(bobObject2.body , roofobj.body , -Bob.r*4,  0);
-	rope3 = new Rope(bobObject4.body , roofobj.body , -Bob.r*4 , 0);
-	rope4 = new Rope(bobObject1.body , roofobj.body , -Bob.r*4 , 0);
-	rope5 = new Rope(bobObject5.body , roofobj.body , -Bob.r*4 , 0);
+	rope1 = new Rope(bobObject3.body , roofobj.body , 0 , 0);
+	rope2 = new Rope(bobObject2.body , roofobj.body , -40 , 0);
+	rope3 = new Rope(bobObject4.body , roofobj.body , 40 , 0);
+	rope4 = new Rope(bobObject1.body , roofobj.body , -80 , 0);
+	rope5 = new Rope(bobObject5.body , roofobj.body , 80 , 0);
 
 
 
@@ -61,6 +61,13 @@ function draw() {
   drawSprites();
  
 }
+
+function keyPressed(){
+if(keyCode === UP_ARROW){
+Matter.Body.applyForce(bobObject1.body, bobObject1.body.position, {x: -80, y: -80} );
+}
+}
+
 
 
 

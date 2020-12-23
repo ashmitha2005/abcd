@@ -16,9 +16,9 @@ class Bob  {
         World.add(world, this.body);
     }
     display(){
-        var Bobpos =this.body.position; 
+        var pos =this.body.position; 
         push();
-        translate(Bobpos.x , Bobpos.y);
+        translate(this.body.position.x , this.body.position.y);
         rectMode(CENTER);
         fill("pink");
         stroke("black")
